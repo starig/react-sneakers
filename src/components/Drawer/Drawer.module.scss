@@ -18,6 +18,7 @@
   background: #fff;
   box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
   padding: 30px;
+  flex: 1;
 
   h2 {
     margin: 0;
@@ -28,9 +29,14 @@
     margin-bottom: 40px;
   }
 }
-
+.cartTotalBlockAbsolute {
+  position: absolute;
+  width: 325px;
+  bottom: 30px;
+}
 .cartTotalBlock {
   ul {
+    display: block;
     margin-bottom: 40px !important;
     li {
       display: flex;
@@ -51,6 +57,11 @@
   .greenButton {
     position: relative;
 
+    &:disabled {
+      background-color: #bebebe;
+      cursor: default;
+      animation: button-loading 1.5s ease-in-out infinite;
+    }
     &:hover {
       img {
         transform: translateX(5px);
@@ -149,3 +160,14 @@
   }
 }
 
+@keyframes button-loading {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
