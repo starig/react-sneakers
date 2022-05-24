@@ -78,7 +78,8 @@ function App() {
             isItemAdded,
             onAddToFavorite,
             setCartOpened,
-            setCartItems
+            setCartItems,
+            onAddToCart,
         }}>
             <div className={`wrapper clear`}>
                 {cartOpened && <Drawer items={cartItems} onClose={() => setCartOpened(false)} onRemove={onRemoveItem}/>}
